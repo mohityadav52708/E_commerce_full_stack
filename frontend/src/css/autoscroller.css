@@ -1,0 +1,19 @@
+.autoscroller {
+    overflow: hidden;
+    max-width: 100%;
+  }
+  
+  .autoscroller-slider {
+    white-space: nowrap;
+    transition: ease 1000ms;
+  }
+  
+  .autoscroller-slide {
+    display: inline-block;
+    height: 400px; /* Adjust the height as needed */
+    width: 100%;
+    background-size: cover;
+  }
+  
+  /* Add additional styling as needed */
+  
