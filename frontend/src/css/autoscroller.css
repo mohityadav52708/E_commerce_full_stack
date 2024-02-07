@@ -1,6 +1,7 @@
 .autoscroller {
     overflow: hidden;
     max-width: 100%;
+    margin-top: 10px;
   }
   
   .autoscroller-slider {
@@ -10,7 +11,7 @@
   
   .autoscroller-slide {
     display: inline-block;
-    height: 400px; /* Adjust the height as needed */
+    height: 500px; /* Adjust the height as needed */
     width: 100%;
     background-size: cover;
   }

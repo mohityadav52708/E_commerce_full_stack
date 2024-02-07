@@ -1,60 +1,39 @@
-// CartSection.jsx
-import React from 'react';
-import category from './css/category.css'
+import React, { useState } from 'react';
+import './css/category.css';
 
-const Category = () => {
+const Category = ({ onCategoryClick }) => {
+  const [selectedCategory, setSelectedCategory] = useState(null);
+
+  const handleCategoryClick = (category) => {
+    setSelectedCategory(category);
+  };
+
+  const categories = [
+    {
+      name: 'Men',
+    },
+    {
+      name: 'Women',
+    },
+    {
+      name: 'Children',
+    },
+    {
+      name: 'Grocery',
+    },
+    {
+      name: 'Makeup',
+    },
+  ];
   return (
     <section className="cart-section">
       <div className="category-container">
-        <div className="category">
-          <h2>Men</h2>
-          <ul className="sub-categories">
-            <li>T-shirts</li>
-            <li>Jeans</li>
-            <li>Shoes</li>
-            {/* Add more sub-categories as needed */}
-          </ul>
-        </div>
-
-        <div className="category">
-          <h2>Women</h2>
-          <ul className="sub-categories">
-            <li>Dresses</li>
-            <li>Handbags</li>
-            <li>Accessories</li>
-            {/* Add more sub-categories as needed */}
-          </ul>
-        </div>
-
-        <div className="category">
-          <h2>Children</h2>
-          <ul className="sub-categories">
-            <li>Toys</li>
-            <li>Clothing</li>
-            <li>Footwear</li>
-            {/* Add more sub-categories as needed */}
-          </ul>
-        </div>
-
-        <div className="category">
-          <h2>Grocery</h2>
-          <ul className="sub-categories">
-            <li>Fruits</li>
-            <li>Vegetables</li>
-            <li>Cereals</li>
-            {/* Add more sub-categories as needed */}
-          </ul>
-        </div>
-
-        <div className="category">
-          <h2>Makeup</h2>
-          <ul className="sub-categories">
-            <li>Lipstick</li>
-            <li>Foundation</li>
-            <li>Eyeshadow</li>
-            {/* Add more sub-categories as needed */}
-          </ul>
-        </div>
+        {categories.map((category, index) => (
+          <div className="category" key={index} onClick={() => handleCategoryClick(category.name)}>
+            <h2>{category.name}</h2>
+            
+          </div>
+        ))}
       </div>
     </section>
   );
